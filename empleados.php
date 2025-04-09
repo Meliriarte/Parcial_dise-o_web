@@ -139,23 +139,22 @@ function eliminarempleado($id) {
 $opcion = $_POST["opcion"];
 
 switch ($opcion) {
-    case "1": //Agregar empleado
+    case "1": // Agregar empleado
         $id = $_POST["id"];
         $nombre = $_POST["nombre"];
         $apellidos = $_POST["apellidos"];
         $nacimiento = $_POST["nacimiento"];
         $ingreso = $_POST["ingreso"];
         $tipo = $_POST["tipo"];
-
+    
         if ($tipo == "asalariado") {
-            //Solo requiere los datos básicos, el salario es fijo
+            //Solo requiere datos basicos el salario esta definido
             $empleado = new EAsalariado($id, $nombre, $apellidos, $nacimiento, $ingreso);
         } else {
-            //Inicia con 0 clientes
-            $monto = $_POST["montoCliente"];
+            //Inicia con 0 clientes y el salario base asegurado
             $empleado = new EComision($id, $nombre, $apellidos, $nacimiento, $ingreso);
         }
-
+    
         $empleados[] = $empleado;
         echo "Empleado agregado exitosamente.";
         break;

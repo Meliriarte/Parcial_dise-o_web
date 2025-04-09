@@ -17,7 +17,7 @@
 
       //Muestra solo los campos necesarios según la opción elegida
       if (opcion === "1") { //Agregar empleado
-        mostrar(["campo_id", "campo_nombre", "campo_apellido", "campo_nacimiento", "campo_ingreso", "campo_tipo", "campo_salario", "campo_monto"]);
+        mostrar(["campo_id", "campo_nombre", "campo_apellido", "campo_nacimiento", "campo_ingreso", "campo_tipo"]);
       } else if (opcion === "2") { //Agregar clientes
         mostrar(["campo_id", "campo_clientes"]);
       } else if (opcion === "3") { //Consultar empleado
@@ -97,6 +97,11 @@
         <option value="asalariado">Asalariado</option>
         <option value="comision">Comisión</option>
       </select>
+    </div>
+
+    <div class = "campo" id="campo_clientes">
+      <label>Clientes:</label>
+      <input type="text" name="clientes">
     </div>
 
     <div class="campo" id="campo_tipo_nomina">
